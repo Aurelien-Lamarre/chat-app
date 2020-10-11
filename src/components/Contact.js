@@ -3,7 +3,7 @@ import './Contact.css';
 
 const name = 'Aurelien Lamarre';
 const avatar = "https://avatars0.githubusercontent.com/u/71284692?s=400&amp;u=ee09697483eb96f514ecbb655630c98b56997037&amp;v=4";
-const online = false;
+const online = true;
 
 function Contact() {
     return(
