@@ -6,8 +6,8 @@ const avatar = "https://avatars0.githubusercontent.com/u/71284692?s=400&amp;u=ee
 const online = true;
 
 class Contact extends Component {
-    constructor(props) {
-        super(props);
+    constructor({name,avatar,online}) {
+        super({name,avatar,online});
         this.state = { 
             online: false
          };
@@ -18,13 +18,13 @@ class Contact extends Component {
             <img class='avatar' src={avatar}/>
             <div className='status'>
             <h4 className='name'>{name}</h4>
-            <div>
-                <div className={this.state.online ? 'status-online': 'status-offline'}></div>
-                <p className='status-text' onClick={event => {
-                    const offline = !this.state.online;
-                    this.setState({online:offline})
-                }}>{this.state.online ? 'Online': 'Offline'} </p>
-            </div>
+            <div onClick={event => {
+                  const offline = !this.state.online;
+                  this.setState({online:offline})
+              }} key={name}>
+                <div className={this.state.online ? 'status-online': 'status-offline'} key={name}></div>
+                <p className='status-text' >{this.state.online ? 'Online': 'Offline'} </p>
+              </div>
             </div>
         </div>
             
